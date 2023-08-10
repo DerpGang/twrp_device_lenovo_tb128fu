@@ -1,6 +1,5 @@
 # cut-down version of /vendor/build.prop
 ro.boot.dynamic_partitions=true
-ro.virtual_ab.enabled=true
 
 ro.product.first_api_level=31
 
