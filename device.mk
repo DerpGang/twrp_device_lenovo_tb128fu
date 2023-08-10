@@ -59,6 +59,10 @@ AB_OTA_POSTINSTALL_CONFIG += \
 # vendor and odm and we also dont want to AB update them
 TARGET_ENFORCE_AB_OTA_PARTITION_LIST := true
 
+# OEM otacert
+PRODUCT_EXTRA_RECOVERY_KEYS += \
+    $(LOCAL_PATH)/security/releasekey
+
 # Boot control HAL
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl-qti.recovery \
