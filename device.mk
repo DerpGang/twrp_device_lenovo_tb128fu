@@ -26,6 +26,39 @@ LOCAL_PATH := device/lenovo/TB128FU
 # define hardware platform
 PRODUCT_PLATFORM := bengal
 
+# A/B support
+AB_OTA_UPDATER := true
+
+# A/B
+AB_OTA_PARTITIONS += \
+    boot \
+    system \
+    system_ext \
+    vendor \
+    product \
+    recovery \
+    vbmeta \
+    vbmeta_system \
+    dtbo
+
+PRODUCT_PACKAGES += \
+    otapreopt_script \
+    cppreopts.sh \
+    update_engine \
+    update_verifier \
+    update_engine_sideload
+
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=ext4 \
+    POSTINSTALL_OPTIONAL_system=true
+
+# tell update_engine to not change dynamic partition table during updates
+# needed since our qti_dynamic_partitions does not include
+# vendor and odm and we also dont want to AB update them
+TARGET_ENFORCE_AB_OTA_PARTITION_LIST := true
+
 # Boot control HAL
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl-qti.recovery \
