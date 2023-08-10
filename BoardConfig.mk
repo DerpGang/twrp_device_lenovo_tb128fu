@@ -158,35 +158,28 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 # Treble
 BOARD_VNDK_VERSION := current
 
-# display
-TW_THEME := landscape_hdpi
-TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
-TW_SCREEN_BLANK_ON_BOOT := true
-TW_ROTATION := 270
-RECOVERY_TOUCHSCREEN_SWAP_XY := true
-RECOVERY_TOUCHSCREEN_FLIP_Y := true
-TW_DEFAULT_BRIGHTNESS := "80"
-
-# Recovery
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_SUPPRESS_SECURE_ERASE := true
+# TWRP flags
 RECOVERY_SDCARD_ON_DATA := true
-TARGET_RECOVERY_QCOM_RTC_FIX := true
+RECOVERY_TOUCHSCREEN_FLIP_Y := true
+RECOVERY_TOUCHSCREEN_SWAP_XY := true
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+TW_DEFAULT_BRIGHTNESS := "80"
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_EXCLUDE_TWRPAPP := true
+TW_EXTRA_LANGUAGES := true
+TW_HAS_EDL_MODE := true
+TW_INCLUDE_NTFS_3G := true
+TW_INCLUDE_PYTHON := true
+TW_INCLUDE_REPACKTOOLS := true
+TW_INCLUDE_RESETPROP := true
+TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_ROTATION := 270
+TW_SCREEN_BLANK_ON_BOOT := true
+TW_THEME := landscape_hdpi
+TW_USE_TOOLBOX := true
 
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 BUILD_BROKEN_DUP_RULES := true
-
-# TWRP Configuration
-TW_INCLUDE_NTFS_3G := true
-TW_USE_TOOLBOX := true
-TW_EXCLUDE_TWRPAPP := true
-TW_EXCLUDE_SUPERSU := true
-TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_EXTRA_LANGUAGES := true
-TW_EXCLUDE_DEFAULT_USB_INIT := true
-TW_HAS_EDL_MODE := true
-TW_INCLUDE_REPACKTOOLS := true
-TW_INCLUDE_RESETPROP := true
 
 TW_OVERRIDE_SYSTEM_PROPS := \ "ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
 
