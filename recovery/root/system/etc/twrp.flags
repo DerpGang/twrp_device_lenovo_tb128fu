@@ -10,8 +10,8 @@
 /data               f2fs    /dev/block/bootdevice/by-name/userdata          flags=fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0;metadata_encryption=aes-256-xts:wrappedkey_v0;keydirectory=/metadata/vold/metadata_encryption
 /metadata           ext4    /dev/block/bootdevice/by-name/metadata          flags=backup=1
 
-# Lenovo
-/lenovocust         ext4    /dev/block/bootdevice/by-name/lenovocust        flags=backup=1;display="Lenovo Cust"
+# Lenovo | Cache
+/cache              ext4    /dev/block/bootdevice/by-name/lenovocust        flags=backup=0;display="Cache"
 
 # Persist
 /persist            ext4    /dev/block/bootdevice/by-name/persist           flags=backup=1;display="Persist";fsflags=ro
